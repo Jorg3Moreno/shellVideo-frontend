@@ -13,3 +13,7 @@
 `npm i webpack-dev-server --save-dev`
 
 `npm i mini-css-extract-plugin css-loader node-sass sass-loader --save-dev`
+
+## ESLint
+
+`pm i eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
