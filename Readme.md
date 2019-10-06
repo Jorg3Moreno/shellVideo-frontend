@@ -9,3 +9,5 @@
 ## installing webpack
 
 `npm i webpack webpack-cli html-webpack-plugin html-loader --save-dev`
+
+`npm i webpack-dev-server --save-dev`
