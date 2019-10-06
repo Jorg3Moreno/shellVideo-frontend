@@ -11,3 +11,5 @@
 `npm i webpack webpack-cli html-webpack-plugin html-loader --save-dev`
 
 `npm i webpack-dev-server --save-dev`
+
+`npm i mini-css-extract-plugin css-loader node-sass sass-loader --save-dev`
