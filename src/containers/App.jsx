@@ -2,11 +2,13 @@ import React from "react";
 
 import "../assets/styles/App.scss";
 import Header from "../components/Header";
+import Search from "../components/Search";
 
-const App = () => {
+const App = () => (
   <div className="app">
     <Header />
-  </div>;
-};
+    <Search />
+  </div>
+);
 
-export default Header;
+export default App;
