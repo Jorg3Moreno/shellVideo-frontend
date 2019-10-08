@@ -13,11 +13,24 @@ const App = () => (
     <Header />
     <Search />
 
-    <Categories>
+    <Categories title="My Favorites">
       <Carousel>
         <CarouselItem />
         <CarouselItem />
         <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title="Trends">
+      <Carousel>
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title="Originals">
+      <Carousel>
         <CarouselItem />
       </Carousel>
     </Categories>
