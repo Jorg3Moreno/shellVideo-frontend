@@ -24,8 +24,8 @@ const CarouselItem = () => (
           alt="Plus Icon"
         />
       </div>
-      <p className="carousel-item__details--title">Título descriptivo</p>
-      <p className="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+      <p className="carousel-item__details--title">Amazing Title</p>
+      <p className="carousel-item__details--subtitle">2019 16+ 114 minutes.</p>
     </div>
   </div>
 );

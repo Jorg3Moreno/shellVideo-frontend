@@ -6,23 +6,18 @@ import userIcon from "../assets/static/user-icon.png";
 
 const Header = props => (
   <header className="header">
-    <img className="header__img" src={logo} alt="Platzi Video" />
-    <div>
-      <h1>
-        Shell<span>Video</span>
-      </h1>
-    </div>
+    <img className="header__img" src={logo} alt="Shell Video" />
     <div className="header__menu">
       <div className="header__menu--profile">
         <img src={userIcon} alt="" />
-        <p>Perfil</p>
+        <p>Profile</p>
       </div>
       <ul>
         <li>
-          <a href="/">Cuenta</a>
+          <a href="/">Account</a>
         </li>
         <li>
-          <a href="/">Cerrar Sesión</a>
+          <a href="/">Sign out</a>
         </li>
       </ul>
     </div>
