@@ -21,3 +21,7 @@
 ## Fake JSON API
 
 `npm i json-server -g`
+
+## Prop types
+
+`npm i prop-types`
