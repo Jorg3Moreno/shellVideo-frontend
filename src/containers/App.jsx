@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import "../assets/styles/App.scss";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import Categories from "../components/Categories";
@@ -8,35 +7,50 @@ import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import Footer from "../components/Footer";
 
-const App = () => (
-  <div className="app">
-    <Header />
-    <Search />
+import "../assets/styles/App.scss";
 
-    <Categories title="My Favorites">
-      <Carousel>
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+const App = () => {
+  const [videos, setVideos] = useState({
+    mylist: [],
+    trends: [],
+    originals: []
+  });
 
-    <Categories title="Trends">
-      <Carousel>
-        <CarouselItem />
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+  useEffect(() => {
+    fetch("http://localhost:3000/initalState")
+      .then(response => response.json())
+      .then(data => setVideos(data));
+  }, []);
 
-    <Categories title="Originals">
-      <Carousel>
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+  return (
+    <div className="app">
+      <Header />
+      <Search />
+      {videos.mylist.length > 0 && (
+        <Categories title="My Favorites">
+          <Carousel>
+            <CarouselItem />
+          </Carousel>
+        </Categories>
+      )}
 
-    <Footer />
-  </div>
-);
+      <Categories title="Trends">
+        <Carousel>
+          {videos.trends.map(item => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
+        </Carousel>
+      </Categories>
+
+      <Categories title="Originals">
+        <Carousel>
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

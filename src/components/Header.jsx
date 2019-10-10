@@ -1,8 +1,9 @@
 import React from "react";
 
-import "../assets/styles/components/Header.scss";
 import logo from "../assets/static/logo-platzi-video-BW2.png";
 import userIcon from "../assets/static/user-icon.png";
+
+import "../assets/styles/components/Header.scss";
 
 const Header = props => (
   <header className="header">

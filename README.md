@@ -16,4 +16,8 @@
 
 ## ESLint
 
-`pm i eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
+`npm i eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
+
+## Fake JSON API
+
+`npm i json-server -g`
