@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../assets/styles/Register.scss";
 
@@ -16,7 +17,7 @@ const Register = () => (
         />
         <button class="register__button">Sign up</button>
       </form>
-      <a href="">Sign in</a>
+      <Link to="/login">Sign in</Link>
     </section>
   </section>
 );

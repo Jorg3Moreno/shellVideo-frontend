@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
@@ -33,7 +34,7 @@ const Login = () => (
         </div>
       </section>
       <p className="login__container--register">
-        Do not you have an account yet? <a href="">Sign up</a>
+        Do not you have an account yet? <Link to="/register">Sign up</Link>
       </p>
     </section>
   </section>
