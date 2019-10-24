@@ -29,3 +29,7 @@
 ## React router dom
 
 `npm i react-router-dom --save`
+
+## Redux
+
+`npm install redux react-redux --save`
