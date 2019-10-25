@@ -15,11 +15,9 @@ const Home = ({ myList, trends, originals }) => {
       {myList.length > 0 && (
         <Categories title="My Favorites">
           <Carousel>
-            <Carousel>
-              {initialState.mylist.map(item => (
-                <CarouselItem key={item.id} {...item} />
-              ))}
-            </Carousel>
+            {myList.map(item => (
+              <CarouselItem key={item.id} {...item} />
+            ))}
           </Carousel>
         </Categories>
       )}
