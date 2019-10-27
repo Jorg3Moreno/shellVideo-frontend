@@ -6,11 +6,21 @@ import { setFavorite, deleteFavorite } from "../actions";
 import playIcon from "../assets/static/play-icon.png";
 import plusIcon from "../assets/static/plus-icon.png";
 import removeIcon from "../assets/static/remove-icon.png";
+import favoriteIcon from "../assets/static/favorite.png";
 
 import "../assets/styles/components/CarouselItem.scss";
 
 const CarouselItem = props => {
-  const { id, cover, title, year, contentRating, duration } = props;
+  const {
+    id,
+    cover,
+    title,
+    year,
+    contentRating,
+    duration,
+    isList,
+    favorite
+  } = props;
 
   const handleSetFavorite = () => {
     props.setFavorite({
@@ -19,7 +29,8 @@ const CarouselItem = props => {
       title,
       year,
       contentRating,
-      duration
+      duration,
+      favorite
     });
   };
 
@@ -37,18 +48,28 @@ const CarouselItem = props => {
             src={playIcon}
             alt="Play Icon"
           />
-          <img
-            className="carousel-item__details--img"
-            src={plusIcon}
-            alt="Plus Icon"
-            onClick={handleSetFavorite}
-          />
-          <img
-            className="carousel-item__details--img"
-            src={removeIcon}
-            alt="Delete Icon"
-            onClick={() => handleDeleteFavorite(id)}
-          />
+
+          {isList ? (
+            <img
+              className="carousel-item__details--img"
+              src={removeIcon}
+              alt="Delete Icon"
+              onClick={() => handleDeleteFavorite(id)}
+            />
+          ) : favorite ? (
+            <img
+              className="carousel-item__details--img"
+              src={favoriteIcon}
+              alt="Favorite Icon"
+            />
+          ) : (
+            <img
+              className="carousel-item__details--img"
+              src={plusIcon}
+              alt="Plus Icon"
+              onClick={handleSetFavorite}
+            />
+          )}
         </div>
         <p className="carousel-item__details--title">{title}</p>
         <p className="carousel-item__details--subtitle">
