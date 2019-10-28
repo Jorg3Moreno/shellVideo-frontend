@@ -33,3 +33,7 @@
 ## Redux
 
 `npm install redux react-redux --save`
+
+## MD5 to work with gravatar
+
+`npm i md5 --save`
