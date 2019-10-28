@@ -12,6 +12,11 @@ const reducers = (state, action) => {
           favoriteItem => favoriteItem.id !== action.payload
         )
       };
+    case "LOGIN_REQUEST":
+      return {
+        ...state,
+        user: action.payload
+      };
     default:
       return state;
   }
