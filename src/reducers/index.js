@@ -22,6 +22,11 @@ const reducers = (state, action) => {
         ...satate,
         user: action.payload
       };
+    case "REGISTER_REQUEST":
+      return {
+        ...state,
+        user: action.payload
+      };
     default:
       return state;
   }
