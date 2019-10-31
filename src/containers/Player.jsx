@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import { connect } from "react-redux";
 
+import { getVideoSource } from "../actions";
+import NotFound from "../containers/NotFound";
 import "../assets/styles/Player.scss";
 
 const Player = props => {
   const { id } = props.match.params;
+  const hasPlaying = Object.keys(props.playing).length > 0;
 
-  return (
+  // useLayoutEffect is like useEffect but works syncronaly
+  useLayoutEffect(() => {
+    props.getVideoSource(id);
+  }, []);
+
+  return hasPlaying ? (
     <div className="player">
       <video controls autoPlay>
-        <source src="" type="video/mp4" />
+        <source src={props.playing.source} type="video/mp4" />
       </video>
       <div className="player__back">
         <button type="button" onClick={props.history.goBack}>
@@ -16,7 +25,22 @@ const Player = props => {
         </button>
       </div>
     </div>
+  ) : (
+    <NotFound />
   );
 };
 
-export default Player;
+const mapStateToProps = state => {
+  return {
+    playing: state.playing
+  };
+};
+
+const mapDispatchToProps = {
+  getVideoSource
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Player);
