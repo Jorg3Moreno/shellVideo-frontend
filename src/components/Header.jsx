@@ -9,7 +9,7 @@ import userIcon from "../assets/static/user-icon.png";
 import "../assets/styles/components/Header.scss";
 
 const Header = props => {
-  const { user } = props;
+  const { user, location } = props;
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
@@ -17,7 +17,13 @@ const Header = props => {
   };
 
   return (
-    <header className="header">
+    <header
+      className={
+        location.pathname === "/login" || location.pathname === "/register"
+          ? "header header__login-register"
+          : "header"
+      }
+    >
       <Link to="/">
         <img className="header__img" src={logo} alt="Shell Video" />
       </Link>

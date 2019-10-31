@@ -19,7 +19,7 @@ const reducers = (state, action) => {
       };
     case "LOGOUT_REQUEST":
       return {
-        ...satate,
+        ...state,
         user: action.payload
       };
     case "REGISTER_REQUEST":
